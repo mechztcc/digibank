@@ -22,10 +22,7 @@ class CreditCardWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Image(
-              image: AssetImage('assets/images/visa.png'),
-              height: 60,
-            ),
+
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
