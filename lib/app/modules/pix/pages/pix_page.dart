@@ -62,9 +62,6 @@ class PixPageState extends State<PixPage> {
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
           FractionallySizedBox(
             widthFactor: 0.9,
             child: ElevatedButton(
