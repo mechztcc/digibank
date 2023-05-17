@@ -1,3 +1,5 @@
+import 'package:digibank/app/modules/auth/pages/create-account_page.dart';
+import 'package:digibank/app/modules/auth/pages/login_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AuthModule extends Module {
@@ -5,6 +7,14 @@ class AuthModule extends Module {
   final List<Bind> binds = [];
 
   @override
-  final List<ModularRoute> routes = [];
-
+  final List<ModularRoute> routes = [
+    ChildRoute(
+      Modular.initialRoute,
+      child: (_, args) => CreateAccountPage(),
+    ),
+    ChildRoute(
+      '/login',
+      child: (_, args) => LoginPage(),
+    ),
+  ];
 }
