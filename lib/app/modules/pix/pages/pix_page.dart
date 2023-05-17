@@ -1,3 +1,4 @@
+import 'package:digibank/app/core/components/bottom_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -14,9 +15,7 @@ class PixPageState extends State<PixPage> {
     final Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      bottomNavigationBar: BottomBarWidget(index: 2),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
