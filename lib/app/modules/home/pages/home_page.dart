@@ -91,13 +91,18 @@ class HomePageState extends State<HomePage> {
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: const [
-                Text(
-                  'Histórico de transações',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
+            child: Column(
+              children: [
+                const Divider(),
+                Row(
+                  children: const [
+                    Text(
+                      'Histórico de transações',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -121,13 +126,18 @@ class HomePageState extends State<HomePage> {
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: const [
-                Text(
-                  'Um presente pra você',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
+            child: Column(
+              children: [
+                const Divider(),
+                Row(
+                  children: const [
+                    Text(
+                      'Um presente pra você',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
