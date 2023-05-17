@@ -2,6 +2,7 @@ import 'package:digibank/app/core/components/credit_card_widget.dart';
 import 'package:digibank/app/modules/home/components/history_card_widget.dart';
 import 'package:digibank/app/modules/home/components/item_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -48,6 +49,11 @@ class HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          if (index == 2) {
+            Modular.to.navigate('/pix/create');
+          }
+        },
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
