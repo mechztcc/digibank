@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 
 class ItemCardWidget extends StatelessWidget {
   final String title;
-  const ItemCardWidget({Key? key, this.title = "ItemCardWidget"})
-      : super(key: key);
+  final Icon icon;
+
+  const ItemCardWidget({
+    Key? key,
+    required this.title,
+    required this.icon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
@@ -14,17 +21,13 @@ class ItemCardWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           color: Colors.deepPurpleAccent,
         ),
-        height: 100,
-        width: 100,
+        width: size.width * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(
-              Icons.security_sharp,
-              color: Colors.white,
-            ),
+          children: [
+            icon,
             Text(
-              'Seguro carro',
+              title,
               style: TextStyle(color: Colors.white),
             )
           ],

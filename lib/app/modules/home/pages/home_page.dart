@@ -85,7 +85,10 @@ class HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          const CreditCardWidget(),
+          SizedBox(
+            height: size.height * 0.3,
+            child: const CreditCardWidget(),
+          ),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
@@ -130,14 +133,38 @@ class HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(
-            height: size.height * 0.1,
+            height: size.height * 0.2,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: const [
-                ItemCardWidget(),
-                ItemCardWidget(),
-                ItemCardWidget(),
-                ItemCardWidget(),
+                ItemCardWidget(
+                  title: 'Seguro carro',
+                  icon: Icon(
+                    Icons.car_crash_outlined,
+                    color: Colors.white,
+                  ),
+                ),
+                ItemCardWidget(
+                  title: 'Seguro vida',
+                  icon: Icon(
+                    Icons.local_hospital_outlined,
+                    color: Colors.white,
+                  ),
+                ),
+                ItemCardWidget(
+                  title: 'Seguro celular',
+                  icon: Icon(
+                    Icons.smartphone_outlined,
+                    color: Colors.white,
+                  ),
+                ),
+                ItemCardWidget(
+                  title: 'Seguro casa',
+                  icon: Icon(
+                    Icons.house,
+                    color: Colors.white,
+                  ),
+                ),
               ],
             ),
           )
