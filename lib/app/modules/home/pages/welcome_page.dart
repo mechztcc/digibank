@@ -75,7 +75,9 @@ class WelcomePageState extends State<WelcomePage> {
                             ),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Modular.to.navigate('/auth/login');
+                        },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: const [
