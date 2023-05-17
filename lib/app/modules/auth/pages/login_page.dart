@@ -88,7 +88,9 @@ class LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Modular.to.navigate('/home');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [

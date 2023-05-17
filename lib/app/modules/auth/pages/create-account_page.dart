@@ -20,7 +20,9 @@ class CreateAccountPageState extends State<CreateAccountPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Image(image: AssetImage('assets/images/create-account.png')),
+            const Image(
+              image: AssetImage('assets/images/create-account.png'),
+            ),
             const Text(
               'Criar nova conta',
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
