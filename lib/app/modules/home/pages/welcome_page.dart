@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class WelcomePage extends StatefulWidget {
   final String title;
@@ -44,7 +45,9 @@ class WelcomePageState extends State<WelcomePage> {
                             ),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Modular.to.navigate('/auth');
+                        },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: const [
