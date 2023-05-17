@@ -63,122 +63,128 @@ class HomePageState extends State<HomePage> {
             label: 'Área pix',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.data_exploration_outlined),
+            label: 'Investimento',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Configurações',
           ),
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: const [
-                Text(
-                  'Minha conta',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.3,
-            child: const CreditCardWidget(),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              children: [
-                const Divider(),
-                Row(
-                  children: const [
-                    Text(
-                      'Histórico de transações',
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: const [
+                  Text(
+                    'Minha conta',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                  ],
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            height: size.height * 0.1,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: const [
-                HistoryCardWidget(),
-                HistoryCardWidget(),
-                HistoryCardWidget(),
-                HistoryCardWidget(),
-                HistoryCardWidget(),
-                HistoryCardWidget(),
-                HistoryCardWidget(),
-                HistoryCardWidget(),
-                HistoryCardWidget(),
-              ],
+            SizedBox(
+              height: size.height * 0.3,
+              child: const CreditCardWidget(),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              children: [
-                const Divider(),
-                Row(
-                  children: const [
-                    Text(
-                      'Um presente pra você',
-                      style: TextStyle(
-                        fontSize: 20,
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  const Divider(),
+                  Row(
+                    children: const [
+                      Text(
+                        'Histórico de transações',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
                       ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.1,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  HistoryCardWidget(),
+                  HistoryCardWidget(),
+                  HistoryCardWidget(),
+                  HistoryCardWidget(),
+                  HistoryCardWidget(),
+                  HistoryCardWidget(),
+                  HistoryCardWidget(),
+                  HistoryCardWidget(),
+                  HistoryCardWidget(),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  const Divider(),
+                  Row(
+                    children: const [
+                      Text(
+                        'Um presente pra você',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.2,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  ItemCardWidget(
+                    title: 'Seguro carro',
+                    icon: Icon(
+                      Icons.car_crash_outlined,
+                      color: Colors.white,
                     ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.2,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: const [
-                ItemCardWidget(
-                  title: 'Seguro carro',
-                  icon: Icon(
-                    Icons.car_crash_outlined,
-                    color: Colors.white,
                   ),
-                ),
-                ItemCardWidget(
-                  title: 'Seguro vida',
-                  icon: Icon(
-                    Icons.local_hospital_outlined,
-                    color: Colors.white,
+                  ItemCardWidget(
+                    title: 'Seguro vida',
+                    icon: Icon(
+                      Icons.local_hospital_outlined,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                ItemCardWidget(
-                  title: 'Seguro celular',
-                  icon: Icon(
-                    Icons.smartphone_outlined,
-                    color: Colors.white,
+                  ItemCardWidget(
+                    title: 'Seguro celular',
+                    icon: Icon(
+                      Icons.smartphone_outlined,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                ItemCardWidget(
-                  title: 'Seguro casa',
-                  icon: Icon(
-                    Icons.house,
-                    color: Colors.white,
+                  ItemCardWidget(
+                    title: 'Seguro casa',
+                    icon: Icon(
+                      Icons.house,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
