@@ -1,4 +1,5 @@
 import 'package:digibank/app/modules/auth/auth_module.dart';
+import 'package:digibank/app/modules/configuration/configuration_module.dart';
 import 'package:digibank/app/modules/pix/pix_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -13,5 +14,6 @@ class AppModule extends Module {
     ModuleRoute('/', module: HomeModule()),
     ModuleRoute('/auth', module: AuthModule()),
     ModuleRoute('/pix', module: PixModule()),
+    ModuleRoute('/configuration', module: ConfigurationModule()),
   ];
 }

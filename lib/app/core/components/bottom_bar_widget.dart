@@ -23,6 +23,10 @@ class BottomBarWidget extends StatelessWidget {
         if (index == 2) {
           Modular.to.navigate('/pix/create');
         }
+
+        if (index == 4) {
+          Modular.to.navigate('/configuration/');
+        }
       },
       type: BottomNavigationBarType.fixed,
       currentIndex: index,
