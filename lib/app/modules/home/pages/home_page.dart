@@ -49,7 +49,7 @@ class HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomBarWidget(index: 0),
+      bottomNavigationBar: const BottomBarWidget(index: 0),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
