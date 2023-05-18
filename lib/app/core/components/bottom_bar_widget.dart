@@ -37,7 +37,7 @@ class BottomBarWidget extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.credit_card),
-          label: 'Meus cartões',
+          label: 'Cartões',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.pix),
