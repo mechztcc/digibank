@@ -86,43 +86,55 @@ class InvestAreaPageState extends State<InvestAreaPage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    SizedBox(
-                      width: size.width * 0.5,
-                      child: const ItemCardWidget(
-                        title: 'TechInvest Ativos',
-                        icon: Icon(
-                          Icons.data_saver_off_sharp,
-                          color: Colors.white,
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: const ItemCardWidget(
+                          title: 'TechInvest Ativos',
+                          icon: Icon(
+                            Icons.data_saver_off_sharp,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: size.width * 0.5,
-                      child: const ItemCardWidget(
-                        title: 'Carteira de ações',
-                        icon: Icon(
-                          Icons.wallet,
-                          color: Colors.white,
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: const ItemCardWidget(
+                          title: 'Carteira de ações',
+                          icon: Icon(
+                            Icons.wallet,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: size.width * 0.5,
-                      child: const ItemCardWidget(
-                        title: 'Carteira de fundos',
-                        icon: Icon(
-                          Icons.wallet,
-                          color: Colors.white,
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: const ItemCardWidget(
+                          title: 'Carteira de fundos',
+                          icon: Icon(
+                            Icons.wallet,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: size.width * 0.5,
-                      child: const ItemCardWidget(
-                        title: 'TechInvest CTA',
-                        icon: Icon(
-                          Icons.wallet,
-                          color: Colors.white,
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: const ItemCardWidget(
+                          title: 'TechInvest CTA',
+                          icon: Icon(
+                            Icons.wallet,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
@@ -151,43 +163,55 @@ class InvestAreaPageState extends State<InvestAreaPage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    SizedBox(
-                      width: size.width * 0.5,
-                      child: const ItemCardWidget(
-                        title: 'Renda fixa',
-                        icon: Icon(
-                          Icons.attach_money,
-                          color: Colors.white,
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: const ItemCardWidget(
+                          title: 'Renda fixa',
+                          icon: Icon(
+                            Icons.attach_money,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: size.width * 0.5,
-                      child: const ItemCardWidget(
-                        title: 'Tesouro direto',
-                        icon: Icon(
-                          Icons.wallet_travel,
-                          color: Colors.white,
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: const ItemCardWidget(
+                          title: 'Tesouro direto',
+                          icon: Icon(
+                            Icons.wallet_travel,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: size.width * 0.5,
-                      child: const ItemCardWidget(
-                        title: 'Fundos',
-                        icon: Icon(
-                          Icons.wallet,
-                          color: Colors.white,
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: const ItemCardWidget(
+                          title: 'Fundos',
+                          icon: Icon(
+                            Icons.wallet,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: size.width * 0.5,
-                      child: const ItemCardWidget(
-                        title: 'Previdencia',
-                        icon: Icon(
-                          Icons.grass,
-                          color: Colors.white,
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: const ItemCardWidget(
+                          title: 'Previdencia',
+                          icon: Icon(
+                            Icons.grass,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
