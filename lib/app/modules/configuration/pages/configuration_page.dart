@@ -40,73 +40,166 @@ class ConfigurationPageState extends State<ConfigurationPage> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.credit_card,
-                      color: Colors.deepPurple,
-                    ),
+              InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.credit_card,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      const Text('Configurar cartão'),
+                      const Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.deepPurple,
+                      )
+                    ],
                   ),
-                  const Text('Configurar cartão'),
-                  const Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.deepPurple,
-                  )
-                ],
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.account_balance_wallet_rounded,
-                      color: Colors.deepPurple,
-                    ),
+              InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.account_balance_wallet_rounded,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      const Text('Configurar conta'),
+                      const Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.deepPurple,
+                      )
+                    ],
                   ),
-                  const Text('Configurar conta'),
-                  const Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.deepPurple,
-                  )
-                ],
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.pix,
-                      color: Colors.deepPurple,
-                    ),
+              InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.pix,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      const Text('Configurar chaves Pix'),
+                      const Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.deepPurple,
+                      )
+                    ],
                   ),
-                  const Text('Configurar chaves Pix'),
-                  const Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.deepPurple,
-                  )
-                ],
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.dashboard,
-                      color: Colors.deepPurple,
-                    ),
+              InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.dashboard,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      const Text('Configurar perfil de investimentos'),
+                      const Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.deepPurple,
+                      )
+                    ],
                   ),
-                  const Text('Configurar perfil de investimentos'),
-                  const Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.deepPurple,
-                  )
-                ],
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.person,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      const Text('Editar dados do Perfil'),
+                      const Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.deepPurple,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.notifications,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      const Text('Notificações'),
+                      const Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.deepPurple,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.help_center,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      const Text('Central de ajuda'),
+                      const Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.deepPurple,
+                      )
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
