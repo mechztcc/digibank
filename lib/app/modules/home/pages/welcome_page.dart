@@ -49,6 +49,7 @@ class WelcomePageState extends State<WelcomePage> {
                   child: Column(
                     children: [
                       SizedBox(
+                        height: 50,
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ButtonStyle(
@@ -70,7 +71,6 @@ class WelcomePageState extends State<WelcomePage> {
                                   fontSize: 20,
                                 ),
                               ),
-                              Icon(Icons.new_label),
                             ],
                           ),
                         ),
@@ -79,6 +79,7 @@ class WelcomePageState extends State<WelcomePage> {
                         height: 10,
                       ),
                       SizedBox(
+                        height: 50,
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ButtonStyle(
@@ -100,7 +101,6 @@ class WelcomePageState extends State<WelcomePage> {
                                   fontSize: 20,
                                 ),
                               ),
-                              Icon(Icons.fingerprint)
                             ],
                           ),
                         ),

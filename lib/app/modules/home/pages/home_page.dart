@@ -129,33 +129,45 @@ class HomePageState extends State<HomePage> {
               height: size.height * 0.2,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: const [
-                  ItemCardWidget(
-                    title: 'Seguro carro',
-                    icon: Icon(
-                      Icons.car_crash_outlined,
-                      color: Colors.white,
+                children: [
+                  InkWell(
+                    onTap: () {},
+                    child: const ItemCardWidget(
+                      title: 'Seguro carro',
+                      icon: Icon(
+                        Icons.car_crash_outlined,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                  ItemCardWidget(
-                    title: 'Seguro vida',
-                    icon: Icon(
-                      Icons.local_hospital_outlined,
-                      color: Colors.white,
+                  InkWell(
+                    onTap: () {},
+                    child: const ItemCardWidget(
+                      title: 'Seguro vida',
+                      icon: Icon(
+                        Icons.local_hospital_outlined,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                  ItemCardWidget(
-                    title: 'Seguro celular',
-                    icon: Icon(
-                      Icons.smartphone_outlined,
-                      color: Colors.white,
+                  InkWell(
+                    onTap: () {},
+                    child: const ItemCardWidget(
+                      title: 'Seguro celular',
+                      icon: Icon(
+                        Icons.smartphone_outlined,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                  ItemCardWidget(
-                    title: 'Seguro casa',
-                    icon: Icon(
-                      Icons.house,
-                      color: Colors.white,
+                  InkWell(
+                    onTap: () {},
+                    child: const ItemCardWidget(
+                      title: 'Seguro casa',
+                      icon: Icon(
+                        Icons.house,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
