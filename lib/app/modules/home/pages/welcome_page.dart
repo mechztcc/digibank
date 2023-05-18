@@ -50,16 +50,18 @@ class WelcomePageState extends State<WelcomePage> {
                           onPressed: () {
                             Modular.to.navigate('/auth');
                           },
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: const [
-                              Text(
-                                'Sou novo por aqui',
-                                style: TextStyle(
-                                  fontSize: 20,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: const [
+                                Text(
+                                  'Sou novo por aqui',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -80,16 +82,18 @@ class WelcomePageState extends State<WelcomePage> {
                           onPressed: () {
                             Modular.to.navigate('/auth/login');
                           },
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: const [
-                              Text(
-                                'Acessar minha conta',
-                                style: TextStyle(
-                                  fontSize: 20,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: const [
+                                Text(
+                                  'Acessar minha conta',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
