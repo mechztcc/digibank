@@ -20,205 +20,207 @@ class InvestAreaPageState extends State<InvestAreaPage> {
       body: Center(
         child: SizedBox(
           width: size.width * 0.9,
-          child: Column(
-            children: <Widget>[
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Minha carteira',
-                    style: TextStyle(
-                      fontSize: 20,
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Minha carteira',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
                     ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.remove_red_eye,
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.remove_red_eye,
+                        color: Colors.deepPurple,
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: const [
+                    Icon(
+                      Icons.data_saver_off_outlined,
                       color: Colors.deepPurple,
                     ),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: const [
-                  Icon(
-                    Icons.data_saver_off_outlined,
-                    color: Colors.deepPurple,
-                  ),
-                  Text(
-                    '100% renda fixa',
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const [Text('R\$ 2.000,00')],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Divider(),
-              Row(
-                children: const [
-                  Text(
-                    'Recomendações de carteiras',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: size.height * 0.2,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        width: size.width * 0.5,
-                        child: const ItemCardWidget(
-                          title: 'TechInvest Ativos',
-                          icon: Icon(
-                            Icons.data_saver_off_sharp,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        width: size.width * 0.5,
-                        child: const ItemCardWidget(
-                          title: 'Carteira de ações',
-                          icon: Icon(
-                            Icons.wallet,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        width: size.width * 0.5,
-                        child: const ItemCardWidget(
-                          title: 'Carteira de fundos',
-                          icon: Icon(
-                            Icons.wallet,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        width: size.width * 0.5,
-                        child: const ItemCardWidget(
-                          title: 'TechInvest CTA',
-                          icon: Icon(
-                            Icons.wallet,
-                            color: Colors.white,
-                          ),
-                        ),
+                    Text(
+                      '100% renda fixa',
+                      style: TextStyle(
+                        fontSize: 16,
                       ),
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Divider(),
-              Row(
-                children: const [
-                  Text(
-                    'Produtos',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: size.height * 0.2,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        width: size.width * 0.5,
-                        child: const ItemCardWidget(
-                          title: 'Renda fixa',
-                          icon: Icon(
-                            Icons.attach_money,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        width: size.width * 0.5,
-                        child: const ItemCardWidget(
-                          title: 'Tesouro direto',
-                          icon: Icon(
-                            Icons.wallet_travel,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        width: size.width * 0.5,
-                        child: const ItemCardWidget(
-                          title: 'Fundos',
-                          icon: Icon(
-                            Icons.wallet,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        width: size.width * 0.5,
-                        child: const ItemCardWidget(
-                          title: 'Previdencia',
-                          icon: Icon(
-                            Icons.grass,
-                            color: Colors.white,
-                          ),
-                        ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [Text('R\$ 2.000,00')],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Divider(),
+                Row(
+                  children: const [
+                    Text(
+                      'Recomendações de carteiras',
+                      style: TextStyle(
+                        fontSize: 20,
                       ),
                     ),
                   ],
                 ),
-              )
-            ],
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  height: size.height * 0.2,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      InkWell(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: size.width * 0.5,
+                          child: const ItemCardWidget(
+                            title: 'TechInvest Ativos',
+                            icon: Icon(
+                              Icons.data_saver_off_sharp,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: size.width * 0.5,
+                          child: const ItemCardWidget(
+                            title: 'Carteira de ações',
+                            icon: Icon(
+                              Icons.wallet,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: size.width * 0.5,
+                          child: const ItemCardWidget(
+                            title: 'Carteira de fundos',
+                            icon: Icon(
+                              Icons.wallet,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: size.width * 0.5,
+                          child: const ItemCardWidget(
+                            title: 'TechInvest CTA',
+                            icon: Icon(
+                              Icons.wallet,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Divider(),
+                Row(
+                  children: const [
+                    Text(
+                      'Produtos',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  height: size.height * 0.2,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      InkWell(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: size.width * 0.5,
+                          child: const ItemCardWidget(
+                            title: 'Renda fixa',
+                            icon: Icon(
+                              Icons.attach_money,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: size.width * 0.5,
+                          child: const ItemCardWidget(
+                            title: 'Tesouro direto',
+                            icon: Icon(
+                              Icons.wallet_travel,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: size.width * 0.5,
+                          child: const ItemCardWidget(
+                            title: 'Fundos',
+                            icon: Icon(
+                              Icons.wallet,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: SizedBox(
+                          width: size.width * 0.5,
+                          child: const ItemCardWidget(
+                            title: 'Previdencia',
+                            icon: Icon(
+                              Icons.grass,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
