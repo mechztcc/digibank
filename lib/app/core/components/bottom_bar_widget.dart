@@ -20,6 +20,10 @@ class BottomBarWidget extends StatelessWidget {
           Modular.to.navigate('/home');
         }
 
+        if (index == 1) {
+          Modular.to.navigate('/cards/');
+        }
+
         if (index == 2) {
           Modular.to.navigate('/pix/create');
         }
