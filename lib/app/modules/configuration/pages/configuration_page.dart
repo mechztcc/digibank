@@ -15,9 +15,6 @@ class ConfigurationPageState extends State<ConfigurationPage> {
     final Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       bottomNavigationBar: const BottomBarWidget(index: 4),
       body: Center(
         child: SizedBox(
