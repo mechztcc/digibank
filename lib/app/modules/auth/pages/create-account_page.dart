@@ -70,7 +70,9 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                     ),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Modular.to.navigate('/home');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
