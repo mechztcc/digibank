@@ -1,7 +1,9 @@
+import 'package:digibank/app/core/components/bottom_bar_widget.dart';
 import 'package:digibank/app/core/components/credit_card_widget.dart';
 import 'package:digibank/app/modules/home/components/history_card_widget.dart';
 import 'package:digibank/app/modules/home/components/item_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -47,31 +49,7 @@ class HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.credit_card),
-            label: 'Meus cartões',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.pix),
-            label: 'Área pix',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.data_exploration_outlined),
-            label: 'Investimento',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Configurações',
-          ),
-        ],
-      ),
+      bottomNavigationBar: BottomBarWidget(index: 0),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
