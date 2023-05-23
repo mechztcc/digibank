@@ -1,10 +1,13 @@
+import 'package:digibank/app/modules/auth/repositories/auth_repository.dart';
 import 'package:digibank/app/modules/auth/pages/create-account_page.dart';
 import 'package:digibank/app/modules/auth/pages/login_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AuthModule extends Module {
   @override
-  final List<Bind> binds = [];
+  final List<Bind> binds = [
+    Bind.lazySingleton((i) => AuthRepository()),
+  ];
 
   @override
   final List<ModularRoute> routes = [

@@ -1,10 +1,15 @@
+import 'package:digibank/app/modules/auth/repositories/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class CreateAccountPage extends StatefulWidget {
   final String title;
-  const CreateAccountPage({Key? key, this.title = 'CreateAccountPage'})
-      : super(key: key);
+  final AuthRepository _authRepository = AuthRepository();
+
+  CreateAccountPage({
+    Key? key,
+    this.title = 'CreateAccountPage',
+  }) : super(key: key);
   @override
   CreateAccountPageState createState() => CreateAccountPageState();
 }
@@ -12,58 +17,56 @@ class CreateAccountPage extends StatefulWidget {
 class CreateAccountPageState extends State<CreateAccountPage> {
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
+    this.widget._authRepository.request();
+
     return Scaffold(
       appBar: AppBar(
         actions: const [],
       ),
-      body: SizedBox(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Image(
-                image: AssetImage('assets/images/create-account.png'),
-              ),
-              const Text(
-                'Criar nova conta',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                child: const Text(
-                  'Por favor, preencha o formulário abaixo para criar uma nova conta.',
-                  style: TextStyle(fontSize: 20),
-                  textAlign: TextAlign.center,
+      body: Center(
+        child: SizedBox(
+          width: size.width * 0.8,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Image(
+                  image: AssetImage('assets/images/create-account.png'),
                 ),
-              ),
-              const FractionallySizedBox(
-                widthFactor: 0.9,
-                child: TextField(
+                const Text(
+                  'Criar nova conta',
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  child: const Text(
+                    'Por favor, preencha o formulário abaixo para criar uma nova conta.',
+                    style: TextStyle(fontSize: 20),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const TextField(
                   obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Nome completo',
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const FractionallySizedBox(
-                widthFactor: 0.9,
-                child: TextField(
+                const SizedBox(
+                  height: 20,
+                ),
+                const TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'CPF',
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              FractionallySizedBox(
-                widthFactor: 0.9,
-                child: ElevatedButton(
+                const SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
                   style: ButtonStyle(
                     padding: MaterialStateProperty.all<EdgeInsets>(
                       const EdgeInsets.symmetric(
@@ -86,13 +89,10 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                     ],
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              FractionallySizedBox(
-                widthFactor: 0.9,
-                child: TextButton(
+                const SizedBox(
+                  height: 20,
+                ),
+                TextButton(
                   onPressed: () {
                     Modular.to.navigate('/');
                   },
@@ -107,9 +107,9 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                       ),
                     ],
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
