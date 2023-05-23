@@ -28,6 +28,22 @@ class CreateAccountPageState extends State<CreateAccountPage> {
 
     final _formKey = GlobalKey<FormState>();
 
+    _validateForm() async {
+      final isValid = _formKey.currentState?.validate();
+
+      if (isValid ?? false) {
+        try {
+          String name = widget._nameEC.text;
+          String document = widget._documentEC.text;
+          String password = widget._passwordEC.text;
+
+          await widget.authService.createAccount(name, document, password);
+        } catch (e) {
+          print(e);
+        }
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         actions: const [],
@@ -113,7 +129,7 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                       ),
                     ),
                     onPressed: () {
-                      widget.authService.createAccount();
+                      _validateForm();
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
