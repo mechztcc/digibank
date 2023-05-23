@@ -1,11 +1,13 @@
 import 'package:digibank/app/modules/auth/repositories/auth_repository.dart';
+import 'package:digibank/app/modules/auth/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:validatorless/validatorless.dart';
 
 class CreateAccountPage extends StatefulWidget {
   final String title;
-  final AuthRepository _authRepository = AuthRepository();
+
+  final AuthService authService = Modular.get();
 
   final _nameEC = TextEditingController();
   final _documentEC = TextEditingController();
@@ -23,8 +25,6 @@ class CreateAccountPageState extends State<CreateAccountPage> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-
-    this.widget._authRepository.request();
 
     final _formKey = GlobalKey<FormState>();
 
@@ -113,7 +113,7 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                       ),
                     ),
                     onPressed: () {
-                      print(_formKey.currentState?.validate());
+                      widget.authService.createAccount();
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
