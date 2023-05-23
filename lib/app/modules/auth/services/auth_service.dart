@@ -5,8 +5,12 @@ class AuthService {
 
   AuthService(this._repository);
 
-  void createAccount() async {
-    String response = await _repository.request();
-    print(response);
+  Future<String> createAccount(
+    String document,
+    String name,
+    String password,
+  ) async {
+    String response = await _repository.createAccount(document, name, password);
+    return response;
   }
 }
