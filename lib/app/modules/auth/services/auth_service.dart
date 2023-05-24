@@ -1,3 +1,4 @@
+import 'package:digibank/app/modules/auth/models/UserModel.dart';
 import 'package:digibank/app/modules/auth/repositories/auth_repository.dart';
 
 class AuthService {
@@ -5,12 +6,20 @@ class AuthService {
 
   AuthService(this._repository);
 
-  Future<String> createAccount(
-    String document,
+  Future<UserModel> createAccount(
     String name,
+    String document,
     String password,
   ) async {
-    String response = await _repository.createAccount(document, name, password);
-    return response;
+    try {
+      UserModel response = await _repository.createAccount(
+        name,
+        document,
+        password,
+      );
+      return response;
+    } catch (e) {
+      rethrow;
+    }
   }
 }

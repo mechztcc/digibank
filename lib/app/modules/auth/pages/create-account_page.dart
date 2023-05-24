@@ -1,3 +1,5 @@
+import 'package:digibank/app/core/utils/custo_snackbar.dart';
+import 'package:digibank/app/modules/auth/models/UserModel.dart';
 import 'package:digibank/app/modules/auth/repositories/auth_repository.dart';
 import 'package:digibank/app/modules/auth/services/auth_service.dart';
 import 'package:flutter/material.dart';
@@ -26,10 +28,10 @@ class CreateAccountPageState extends State<CreateAccountPage> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
     _validateForm() async {
-      final isValid = _formKey.currentState?.validate();
+      final isValid = formKey.currentState?.validate();
 
       if (isValid ?? false) {
         try {
@@ -37,9 +39,26 @@ class CreateAccountPageState extends State<CreateAccountPage> {
           String document = widget._documentEC.text;
           String password = widget._passwordEC.text;
 
-          await widget.authService.createAccount(name, document, password);
+          UserModel user = await widget.authService.createAccount(
+            name,
+            document,
+            password,
+          );
+
+          // ignore: use_build_context_synchronously
+          CustomSnackbar(
+            context: context,
+            message: 'Conta criada com sucesso!',
+          ).success();
+
+          Modular.to.navigate('/auth/login');
         } catch (e) {
-          print(e);
+          final dynamic err = e;
+
+          CustomSnackbar(
+            context: context,
+            message: '${err}',
+          ).warning();
         }
       }
     }
@@ -53,7 +72,7 @@ class CreateAccountPageState extends State<CreateAccountPage> {
           width: size.width * 0.8,
           child: SingleChildScrollView(
             child: Form(
-              key: _formKey,
+              key: formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -80,7 +99,7 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                           5, 'Informe o primeiro e segundo nome.'),
                       Validatorless.required('Nome é obrigatório.')
                     ]),
-                    obscureText: true,
+                    obscureText: false,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Nome completo',
@@ -107,6 +126,7 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                   TextFormField(
                     onChanged: (value) {},
                     controller: widget._passwordEC,
+                    obscureText: true,
                     validator: Validatorless.multiple([
                       Validatorless.min(
                           8, 'A senha deve possuir no mínimo 8 caracteres.'),
