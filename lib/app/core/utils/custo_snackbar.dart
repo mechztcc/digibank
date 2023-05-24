@@ -14,7 +14,7 @@ class CustomSnackbar {
       SnackBar(
         content: Text(message),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
         ),
         duration: const Duration(seconds: 2),
         backgroundColor: Theme.of(context).primaryColor,
