@@ -30,7 +30,7 @@ class CreateAccountPageState extends State<CreateAccountPage> {
 
     final formKey = GlobalKey<FormState>();
 
-    _validateForm() async {
+    validateForm() async {
       final isValid = formKey.currentState?.validate();
 
       if (isValid ?? false) {
@@ -149,7 +149,7 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                       ),
                     ),
                     onPressed: () {
-                      _validateForm();
+                      validateForm();
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
