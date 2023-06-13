@@ -1,5 +1,6 @@
 import 'package:digibank/app/modules/auth/services/auth_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:validatorless/validatorless.dart';
 
@@ -149,7 +150,7 @@ class LoginPageState extends State<LoginPage> {
             ),
           ),
         ),
-      ),
+      ).animate().fade(duration: const Duration(milliseconds: 600))
     );
   }
 }

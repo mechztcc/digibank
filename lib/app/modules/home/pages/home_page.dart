@@ -3,6 +3,7 @@ import 'package:digibank/app/core/components/credit_card_widget.dart';
 import 'package:digibank/app/modules/home/components/history_card_widget.dart';
 import 'package:digibank/app/modules/home/components/item_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatefulWidget {
@@ -174,7 +175,7 @@ class HomePageState extends State<HomePage> {
               ),
             )
           ],
-        ),
+        ).animate().fade(duration: const Duration(milliseconds: 600)),
       ),
     );
   }
