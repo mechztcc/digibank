@@ -1,5 +1,6 @@
 import 'package:digibank/app/core/components/bottom_bar_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class ConfigurationPage extends StatefulWidget {
@@ -229,7 +230,7 @@ class ConfigurationPageState extends State<ConfigurationPage> {
             ),
           ),
         ),
-      ),
+      ).animate().fade(duration: const Duration(milliseconds: 600)),
     );
   }
 }

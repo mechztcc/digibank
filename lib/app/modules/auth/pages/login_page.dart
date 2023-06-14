@@ -35,9 +35,7 @@ class LoginPageState extends State<LoginPage> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        actions: const [],
-      ),
+
       body: Center(
         child: SizedBox(
           width: size.width * 0.9,

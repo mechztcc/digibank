@@ -1,6 +1,7 @@
 import 'package:digibank/app/core/components/bottom_bar_widget.dart';
 import 'package:digibank/app/modules/home/components/item_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class InvestAreaPage extends StatefulWidget {
   final String title;
@@ -223,7 +224,7 @@ class InvestAreaPageState extends State<InvestAreaPage> {
             ),
           ),
         ),
-      ),
+      ).animate().fade(duration: const Duration(milliseconds: 600)),
     );
   }
 }
