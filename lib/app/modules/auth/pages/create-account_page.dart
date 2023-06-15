@@ -5,6 +5,7 @@ import 'package:digibank/app/modules/auth/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:validatorless/validatorless.dart';
 
 class CreateAccountPage extends StatefulWidget {
@@ -77,20 +78,21 @@ class CreateAccountPageState extends State<CreateAccountPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Image(
-                    image: AssetImage('assets/images/create-account.png'),
-                  ),
-                  const Text(
+                  Text(
                     'Criar nova conta',
-                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.rajdhani(
+                        fontSize: 40, fontWeight: FontWeight.bold),
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 10),
-                    child: const Text(
+                    child: Text(
                       'Por favor, preencha o formulário abaixo para criar uma nova conta.',
-                      style: TextStyle(fontSize: 20),
-                      textAlign: TextAlign.center,
+                      style: GoogleFonts.rajdhani(fontSize: 20),
+                      textAlign: TextAlign.start,
                     ),
+                  ),
+                  const SizedBox(
+                    height: 30,
                   ),
                   TextFormField(
                     onChanged: (value) {},
@@ -141,27 +143,28 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      padding: MaterialStateProperty.all<EdgeInsets>(
-                        const EdgeInsets.symmetric(
-                          vertical: 25,
+                  SizedBox(
+                    height: 60,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                    ),
-                    onPressed: () {
-                      validateForm();
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'Avançar',
-                          style: TextStyle(
-                            fontSize: 20,
+                      onPressed: () {
+                        validateForm();
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Avançar',
+                            style: GoogleFonts.rajdhani(
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -171,16 +174,17 @@ class CreateAccountPageState extends State<CreateAccountPage> {
                     onPressed: () {
                       Modular.to.navigate('/');
                     },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
+                    child: SizedBox(
+                      height: 60,
+                      width: double.infinity,
+                      child: Center(
+                        child: Text(
                           'Voltar',
-                          style: TextStyle(
+                          style: GoogleFonts.rajdhani(
                             fontSize: 20,
                           ),
                         ),
-                      ],
+                      ),
                     ),
                   )
                 ],
