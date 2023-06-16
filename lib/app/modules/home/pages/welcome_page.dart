@@ -23,6 +23,11 @@ class WelcomePageState extends State<WelcomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                SizedBox(
+                    height: size.height * 0.3,
+                    child: const Image(
+                        image: AssetImage('assets/images/welcome.gif')),
+                  ),
                 Text(
                   'Bem vindo ao Digibank',
                   style: GoogleFonts.rajdhani(
