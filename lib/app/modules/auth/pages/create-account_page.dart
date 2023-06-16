@@ -78,6 +78,11 @@ class CreateAccountPageState extends State<CreateAccountPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: size.height * 0.3,
+                    child: const Image(
+                        image: AssetImage('assets/images/create-account.gif')),
+                  ),
                   Text(
                     'Criar nova conta',
                     style: GoogleFonts.rajdhani(
