@@ -24,9 +24,6 @@ class ConfigurationPageState extends State<ConfigurationPage> {
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                SizedBox(
-                  height: size.height * 0.1,
-                ),
                 Row(
                   children: const [
                     Text(

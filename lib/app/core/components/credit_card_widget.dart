@@ -18,13 +18,13 @@ class CreditCardWidget extends StatelessWidget {
         image: const DecorationImage(
           image: AssetImage("assets/images/charts.gif"),
           fit: BoxFit.contain,
-          alignment: Alignment.bottomRight
+          alignment: Alignment.bottomRight,
         ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(

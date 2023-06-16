@@ -66,7 +66,6 @@ class CreateAccountPageState extends State<CreateAccountPage> {
     }
 
     return Scaffold(
-
       body: Center(
         child: SizedBox(
           width: size.width * 0.8,
