@@ -15,6 +15,11 @@ class CreditCardWidget extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.deepPurpleAccent,
+        image: const DecorationImage(
+          image: AssetImage("assets/images/charts.gif"),
+          fit: BoxFit.contain,
+          alignment: Alignment.bottomRight
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(15),
@@ -22,7 +27,6 @@ class CreditCardWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [

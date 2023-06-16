@@ -75,7 +75,9 @@ flutter:
     - assets/images/visa.png
     - assets/images/bank.gif
     - assets/images/create-account.gif
+    - assets/images/charts.gif
     - assets/images/welcome.gif
+    - assets/images/wave.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

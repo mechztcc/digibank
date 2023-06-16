@@ -4,11 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class InvestAreaPage extends StatefulWidget {
+  bool isHideContent = false;
+
   final String title;
-  const InvestAreaPage({Key? key, this.title = 'Investimentos'})
-      : super(key: key);
+  InvestAreaPage({Key? key, this.title = 'Investimentos'}) : super(key: key);
   @override
   InvestAreaPageState createState() => InvestAreaPageState();
+
+  onChangeVisibility() {
+    isHideContent = !isHideContent;
+  }
 }
 
 class InvestAreaPageState extends State<InvestAreaPage> {
@@ -37,9 +42,15 @@ class InvestAreaPageState extends State<InvestAreaPage> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.remove_red_eye,
+                      onPressed: () {
+                        setState(() {
+                          widget.onChangeVisibility();
+                        });
+                      },
+                      icon: Icon(
+                        widget.isHideContent
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                         color: Colors.deepPurple,
                       ),
                     )
@@ -64,7 +75,9 @@ class InvestAreaPageState extends State<InvestAreaPage> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [Text('R\$ 2.000,00')],
+                  children: [
+                    Text(widget.isHideContent ? 'R\$ 2.000,00' : '*******')
+                  ],
                 ),
                 const SizedBox(
                   height: 20,

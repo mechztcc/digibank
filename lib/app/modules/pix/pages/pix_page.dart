@@ -20,6 +20,11 @@ class PixPageState extends State<PixPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(
+            height: size.height * 0.3,
+            child: const Image(
+                image: AssetImage('assets/images/welcome.gif')),
+          ),
           const Text(
             'Minha Área Pix',
             style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
