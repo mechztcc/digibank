@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:digibank/app/modules/auth/models/AuthModel.dart';
 import 'package:digibank/app/modules/auth/models/UserModel.dart';
 import 'package:dio/dio.dart';
 
@@ -31,7 +32,7 @@ class AuthRepository {
     }
   }
 
-  Future<String> createSession(
+  Future<AuthModel> createSession(
     String document,
     String password,
   ) async {
@@ -40,8 +41,8 @@ class AuthRepository {
         'document': document,
         'password': password,
       });
-      String token = response.data['token'];
-      return token;
+      AuthModel auth = AuthModel.fromJson(response.data);
+      return auth;
     } on DioError catch (err) {
       if (err.response?.data != null) {
         throw Exception('${err.response?.data['message']}');
