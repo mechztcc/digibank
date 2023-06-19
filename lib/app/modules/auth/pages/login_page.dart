@@ -1,3 +1,4 @@
+import 'package:digibank/app/core/utils/custo_snackbar.dart';
 import 'package:digibank/app/modules/auth/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -31,7 +32,21 @@ class LoginPageState extends State<LoginPage> {
         try {
           String document = widget._documentEC.text;
           String password = widget._passwordEC.text;
-        } catch (e) {}
+
+          await widget.authService.createSession(document, password);
+          // ignore: use_build_context_synchronously
+          CustomSnackbar(
+            context: context,
+            message: 'Login realizado com sucesso!',
+          ).success();
+        } catch (e) {
+          final dynamic err = e;
+
+          CustomSnackbar(
+            context: context,
+            message: '${err}',
+          ).warning();
+        }
       }
     }
 
@@ -47,8 +62,8 @@ class LoginPageState extends State<LoginPage> {
               children: [
                 SizedBox(
                   height: size.height * 0.3,
-                  child: const Image(
-                      image: AssetImage('assets/images/bank.gif')),
+                  child:
+                      const Image(image: AssetImage('assets/images/bank.gif')),
                 ),
                 Text(
                   'Acessar minha conta',
@@ -118,7 +133,7 @@ class LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     onPressed: () {
-                      Modular.to.navigate('/home');
+                      validateForm();
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -126,7 +141,8 @@ class LoginPageState extends State<LoginPage> {
                         Text(
                           'Avançar',
                           style: GoogleFonts.rajdhani(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 20,
+                          ),
                         ),
                       ],
                     ),
@@ -147,7 +163,8 @@ class LoginPageState extends State<LoginPage> {
                         Text(
                           'Voltar',
                           style: GoogleFonts.rajdhani(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 20,
+                          ),
                         ),
                       ],
                     ),

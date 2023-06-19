@@ -22,4 +22,19 @@ class AuthService {
       rethrow;
     }
   }
+
+  Future<void> createSession(
+    String document,
+    String password,
+  ) async {
+    try {
+      String token = await _repository.createSession(
+        document,
+        password,
+      );
+      print(token);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
