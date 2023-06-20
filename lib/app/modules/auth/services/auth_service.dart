@@ -41,6 +41,7 @@ class AuthService {
       await prefs.setString('name', auth.name!);
       await prefs.setString('accountCode', auth.accountCode!);
       await prefs.setInt('balance', auth.balance!);
+      await prefs.setInt('userId', auth.userId!);
 
       Modular.to.navigate('/home');
     } catch (e) {

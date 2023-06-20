@@ -6,9 +6,9 @@ class PixService {
 
   PixService(this._repository);
 
-  Future<TransactionHistory> onFindHistory(int id) async {
+  Future<List<TransactionHistory>> onFindHistory(int id) async {
     try {
-      TransactionHistory response = await _repository.findHistory(id);
+      List<TransactionHistory> response = await _repository.findHistory(id);
 
       return response;
     } catch (e) {

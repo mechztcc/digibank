@@ -57,6 +57,54 @@ mixin _$HomeStore on _HomeStoreStoreBase, Store {
     });
   }
 
+  late final _$userIdAtom =
+      Atom(name: '_HomeStoreStoreBase.userId', context: context);
+
+  @override
+  int get userId {
+    _$userIdAtom.reportRead();
+    return super.userId;
+  }
+
+  @override
+  set userId(int value) {
+    _$userIdAtom.reportWrite(value, super.userId, () {
+      super.userId = value;
+    });
+  }
+
+  late final _$historyAtom =
+      Atom(name: '_HomeStoreStoreBase.history', context: context);
+
+  @override
+  List<TransactionHistory> get history {
+    _$historyAtom.reportRead();
+    return super.history;
+  }
+
+  @override
+  set history(List<TransactionHistory> value) {
+    _$historyAtom.reportWrite(value, super.history, () {
+      super.history = value;
+    });
+  }
+
+  late final _$lengthAtom =
+      Atom(name: '_HomeStoreStoreBase.length', context: context);
+
+  @override
+  int get length {
+    _$lengthAtom.reportRead();
+    return super.length;
+  }
+
+  @override
+  set length(int value) {
+    _$lengthAtom.reportWrite(value, super.length, () {
+      super.length = value;
+    });
+  }
+
   late final _$getPrefsAsyncAction =
       AsyncAction('_HomeStoreStoreBase.getPrefs', context: context);
 
@@ -65,12 +113,23 @@ mixin _$HomeStore on _HomeStoreStoreBase, Store {
     return _$getPrefsAsyncAction.run(() => super.getPrefs());
   }
 
+  late final _$onFindHistoryAsyncAction =
+      AsyncAction('_HomeStoreStoreBase.onFindHistory', context: context);
+
+  @override
+  Future onFindHistory() {
+    return _$onFindHistoryAsyncAction.run(() => super.onFindHistory());
+  }
+
   @override
   String toString() {
     return '''
 name: ${name},
 accountCode: ${accountCode},
-balance: ${balance}
+balance: ${balance},
+userId: ${userId},
+history: ${history},
+length: ${length}
     ''';
   }
 }

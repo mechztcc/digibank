@@ -10,6 +10,7 @@ class PixModule extends Module {
     Bind.lazySingleton((i) => PixService(i()), export: true)
   ];
 
+
   @override
   final List<ModularRoute> routes = [
     ChildRoute(

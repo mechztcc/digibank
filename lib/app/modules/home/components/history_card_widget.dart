@@ -1,9 +1,16 @@
+import 'package:digibank/app/modules/home/store/home-store_store.dart';
+import 'package:digibank/app/modules/pix/models/transaction_history.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HistoryCardWidget extends StatelessWidget {
   final String title;
-  const HistoryCardWidget({Key? key, this.title = "HistoryCardWidget"})
+  final TransactionHistory history;
+  HistoryCardWidget(
+      {Key? key, this.title = "HistoryCardWidget", required this.history})
       : super(key: key);
+
+  HomeStore store = Modular.get<HomeStore>();
 
   @override
   Widget build(BuildContext context) {
@@ -14,22 +21,31 @@ class HistoryCardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              children: const [
+              children: [
                 Icon(
-                  Icons.attach_money,
-                  color: Colors.deepPurple,
+                  store.accountCode == history.receiverAccountCode
+                      ? Icons.arrow_downward
+                      : Icons.arrow_upward,
+                  color: store.accountCode == history.receiverAccountCode
+                      ? Colors.green
+                      : Colors.red,
                 ),
-                Text(
+                const Text(
                   'USD',
                   style: TextStyle(color: Colors.deepPurple),
                 ),
               ],
             ),
-            const Text(
-              'R\$ 300,00',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '${history.value}',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

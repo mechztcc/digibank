@@ -23,6 +23,7 @@ class HomePageState extends State<HomePage> {
   @override
   void initState() {
     store.getPrefs();
+    store.onFindHistory();
     super.initState();
   }
 
@@ -65,128 +66,123 @@ class HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: const BottomBarWidget(index: 0),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: const [
-                  Text(
-                    'Minha conta',
-                    style: TextStyle(
-                      fontSize: 20,
+      body: Observer(
+        builder: (_) => SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: const [
+                    Text(
+                      'Minha conta',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            CreditCardWidget(),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: [
-                  const Divider(),
-                  Row(
-                    children: const [
-                      Text(
-                        'Histórico de transações',
-                        style: TextStyle(
-                          fontSize: 20,
+              CreditCardWidget(),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    const Divider(),
+                    Row(
+                      children: const [
+                        Text(
+                          'Histórico de transações',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: size.height * 0.1,
+                child: ListView.builder(
+                  itemCount: store.length,
+                  itemBuilder: (_, index) => HistoryCardWidget(
+                    history: store.history[index],
+                  ),
+                  scrollDirection: Axis.horizontal,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    const Divider(),
+                    Row(
+                      children: const [
+                        Text(
+                          'Um presente pra você',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: size.height * 0.2,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: const ItemCardWidget(
+                        title: 'Seguro carro',
+                        icon: Icon(
+                          Icons.car_crash_outlined,
+                          color: Colors.white,
                         ),
                       ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: size.height * 0.1,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: const [
-                  HistoryCardWidget(),
-                  HistoryCardWidget(),
-                  HistoryCardWidget(),
-                  HistoryCardWidget(),
-                  HistoryCardWidget(),
-                  HistoryCardWidget(),
-                  HistoryCardWidget(),
-                  HistoryCardWidget(),
-                  HistoryCardWidget(),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: [
-                  const Divider(),
-                  Row(
-                    children: const [
-                      Text(
-                        'Um presente pra você',
-                        style: TextStyle(
-                          fontSize: 20,
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: const ItemCardWidget(
+                        title: 'Seguro vida',
+                        icon: Icon(
+                          Icons.local_hospital_outlined,
+                          color: Colors.white,
                         ),
                       ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: size.height * 0.2,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  InkWell(
-                    onTap: () {},
-                    child: const ItemCardWidget(
-                      title: 'Seguro carro',
-                      icon: Icon(
-                        Icons.car_crash_outlined,
-                        color: Colors.white,
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: const ItemCardWidget(
+                        title: 'Seguro celular',
+                        icon: Icon(
+                          Icons.smartphone_outlined,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const ItemCardWidget(
-                      title: 'Seguro vida',
-                      icon: Icon(
-                        Icons.local_hospital_outlined,
-                        color: Colors.white,
+                    InkWell(
+                      onTap: () {},
+                      child: const ItemCardWidget(
+                        title: 'Seguro casa',
+                        icon: Icon(
+                          Icons.house,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const ItemCardWidget(
-                      title: 'Seguro celular',
-                      icon: Icon(
-                        Icons.smartphone_outlined,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const ItemCardWidget(
-                      title: 'Seguro casa',
-                      icon: Icon(
-                        Icons.house,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ).animate().fade(duration: const Duration(milliseconds: 600)),
+                  ],
+                ),
+              )
+            ],
+          ).animate().fade(duration: const Duration(milliseconds: 600)),
+        ),
       ),
     );
   }
