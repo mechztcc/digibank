@@ -1,19 +1,34 @@
 import 'package:digibank/app/core/components/bottom_bar_widget.dart';
 import 'package:digibank/app/core/components/credit_card_widget.dart';
+import 'package:digibank/app/modules/auth/models/AuthModel.dart';
 import 'package:digibank/app/modules/home/components/history_card_widget.dart';
 import 'package:digibank/app/modules/home/components/item_card_widget.dart';
+import 'package:digibank/app/modules/home/store/home-store_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
-  const HomePage({Key? key, this.title = 'HomePage'}) : super(key: key);
+  AuthModel details = AuthModel();
+  Future<SharedPreferences> prefs = SharedPreferences.getInstance();
+
+  HomePage({Key? key, this.title = 'HomePage'}) : super(key: key);
   @override
   HomePageState createState() => HomePageState();
 }
 
 class HomePageState extends State<HomePage> {
+  HomeStoreStore store = HomeStoreStore();
+
+  @override
+  void initState() {
+    store.getPrefs();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -28,20 +43,22 @@ class HomePageState extends State<HomePage> {
             icon: const Icon(Icons.person),
           ),
         ),
-        title: Column(
-          children: const [
-            Text(
-              'Oi, Alberto',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w100,
+        title: Observer(
+          builder: (_) => Column(
+            children: [
+              Text(
+                store.name,
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w100,
+                ),
               ),
-            ),
-            Text(
-              'Bem vindo',
-              style: TextStyle(fontSize: 15),
-            ),
-          ],
+              const Text(
+                'Bem vindo',
+                style: TextStyle(fontSize: 15),
+              ),
+            ],
+          ),
         ),
         actions: [
           IconButton(
@@ -71,7 +88,7 @@ class HomePageState extends State<HomePage> {
             ),
             SizedBox(
               height: size.height * 0.3,
-              child: const CreditCardWidget(),
+              child: CreditCardWidget(),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),

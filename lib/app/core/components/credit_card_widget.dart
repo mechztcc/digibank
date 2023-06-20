@@ -1,9 +1,23 @@
+import 'package:digibank/app/modules/home/store/home-store_store.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
-class CreditCardWidget extends StatelessWidget {
+class CreditCardWidget extends StatefulWidget {
   final String title;
-  const CreditCardWidget({Key? key, this.title = "CreditCardWidget"})
+  CreditCardWidget({Key? key, this.title = "CreditCardWidget"})
       : super(key: key);
+
+  @override
+  State<CreditCardWidget> createState() => _CreditCardWidgetState();
+}
+
+class _CreditCardWidgetState extends State<CreditCardWidget> {
+  HomeStoreStore store = HomeStoreStore();
+  @override
+  void initState() {
+    store.getPrefs();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,25 +41,27 @@ class CreditCardWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  'R\$ 9000,00',
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+            Observer(
+              builder: (_) => Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${store.balance}',
+                    style: const TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Text(
-                  'Saldo da conta',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.white,
+                  Text(
+                    'Saldo da conta',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
