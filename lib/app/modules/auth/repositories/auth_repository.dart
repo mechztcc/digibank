@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:digibank/app/modules/auth/models/AuthModel.dart';
 import 'package:digibank/app/modules/auth/models/UserModel.dart';

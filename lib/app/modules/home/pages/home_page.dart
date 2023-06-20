@@ -8,12 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
-  AuthModel details = AuthModel();
-  Future<SharedPreferences> prefs = SharedPreferences.getInstance();
 
   HomePage({Key? key, this.title = 'HomePage'}) : super(key: key);
   @override
@@ -21,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  HomeStoreStore store = HomeStoreStore();
+  final store = Modular.get<HomeStore>();
 
   @override
   void initState() {
@@ -86,10 +83,7 @@ class HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(
-              height: size.height * 0.3,
-              child: CreditCardWidget(),
-            ),
+            CreditCardWidget(),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(

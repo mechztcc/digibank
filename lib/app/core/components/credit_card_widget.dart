@@ -1,6 +1,8 @@
 import 'package:digibank/app/modules/home/store/home-store_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
 
 class CreditCardWidget extends StatefulWidget {
   final String title;
@@ -12,7 +14,8 @@ class CreditCardWidget extends StatefulWidget {
 }
 
 class _CreditCardWidgetState extends State<CreditCardWidget> {
-  HomeStoreStore store = HomeStoreStore();
+  final store = Modular.get<HomeStore>();
+
   @override
   void initState() {
     store.getPrefs();
@@ -53,7 +56,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Saldo da conta',
                     style: TextStyle(
                       fontSize: 15,

@@ -85,7 +85,7 @@ class LoginPageState extends State<LoginPage> {
                 ),
                 TextFormField(
                   controller: widget._documentEC,
-                  obscureText: true,
+                  obscureText: false,
                   validator: Validatorless.required('CPF é obrigatório.'),
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),

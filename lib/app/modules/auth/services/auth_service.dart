@@ -39,6 +39,7 @@ class AuthService {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setString('token', auth.token!);
       await prefs.setString('name', auth.name!);
+      await prefs.setString('accountCode', auth.accountCode!);
       await prefs.setInt('balance', auth.balance!);
 
       Modular.to.navigate('/home');
