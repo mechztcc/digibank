@@ -2,7 +2,6 @@ import 'package:digibank/app/modules/home/store/home-store_store.dart';
 import 'package:digibank/app/modules/home/pages/home_page.dart';
 import 'package:digibank/app/modules/home/pages/welcome_page.dart';
 import 'package:digibank/app/modules/pix/pix_module.dart';
-import 'package:digibank/app/modules/pix/services/pix_service.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class HomeModule extends Module {

@@ -1,4 +1,5 @@
 import 'package:digibank/app/core/components/bottom_bar_widget.dart';
+import 'package:digibank/app/modules/pix/stores/pix_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -11,6 +12,13 @@ class PixPage extends StatefulWidget {
 }
 
 class PixPageState extends State<PixPage> {
+  final PixStore store = Modular.get<PixStore>();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -103,7 +111,6 @@ class PixPageState extends State<PixPage> {
               const SizedBox(
                 height: 20,
               ),
-              
             ],
           ).animate().fade(duration: const Duration(milliseconds: 600)),
         ),
