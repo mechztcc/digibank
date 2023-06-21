@@ -23,7 +23,6 @@ class HomePageState extends State<HomePage> {
   @override
   void initState() {
     store.getPrefs();
-    store.onFindHistory();
     super.initState();
   }
 

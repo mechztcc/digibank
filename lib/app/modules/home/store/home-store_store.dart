@@ -36,6 +36,8 @@ abstract class _HomeStoreStoreBase with Store {
     accountCode = prefs.getString('accountCode') ?? 'conta não encontrada';
     balance = prefs.getInt('balance') ?? 0;
     userId = prefs.getInt('userId')!;
+
+    onFindHistory();
   }
 
   @action

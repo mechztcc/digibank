@@ -9,7 +9,7 @@ class PixRepository {
 
   Future<List<TransactionHistory>> findHistory(int id) async {
     try {
-      Response response = await _dio.post('$api/history', data: {'userId': 10});
+      Response response = await _dio.post('$api/history', data: {'userId': id});
 
       List<TransactionHistory> history =
           response.data.map<TransactionHistory>((e) {
